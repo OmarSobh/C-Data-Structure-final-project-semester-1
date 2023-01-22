@@ -1,0 +1,8 @@
+C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\bin\Debug\finalProject.exe.config
+C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\bin\Debug\finalProject.exe
+C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\bin\Debug\finalProject.pdb
+C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\obj\Debug\finalProject.csproj.AssemblyReference.cache
+C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\obj\Debug\finalProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\obj\Debug\finalProject.csproj.CoreCompileInputs.cache
+C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\obj\Debug\finalProject.exe
+C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\obj\Debug\finalProject.pdb
