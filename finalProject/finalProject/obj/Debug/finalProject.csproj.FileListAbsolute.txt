@@ -6,3 +6,8 @@ C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\obj\Debug
 C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\obj\Debug\finalProject.csproj.CoreCompileInputs.cache
 C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\obj\Debug\finalProject.exe
 C:\Users\omars\Desktop\מבנה נתונים\finalProject\finalProject\obj\Debug\finalProject.pdb
+C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\obj\Debug\finalProject.csproj.AssemblyReference.cache
+C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\obj\Debug\finalProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\obj\Debug\finalProject.csproj.CoreCompileInputs.cache
+C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\obj\Debug\finalProject.exe
+C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\obj\Debug\finalProject.pdb
