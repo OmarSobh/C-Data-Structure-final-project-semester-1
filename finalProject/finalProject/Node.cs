@@ -22,6 +22,11 @@ namespace finalProject
             this.value = value;
             this.next = next;
         }
+        public Node(Node<T> linkedList)
+        {
+            this.value = linkedList.GetValue();
+            this.next = linkedList.GetNext();
+        }
 
         public T GetValue()
         {
