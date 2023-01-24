@@ -11,3 +11,6 @@ C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\fi
 C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\obj\Debug\finalProject.csproj.CoreCompileInputs.cache
 C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\obj\Debug\finalProject.exe
 C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\obj\Debug\finalProject.pdb
+C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\bin\Debug\finalProject.exe.config
+C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\bin\Debug\finalProject.exe
+C:\Users\omars\Desktop\C-Data-Structure-final-project-semester-1\finalProject\finalProject\bin\Debug\finalProject.pdb

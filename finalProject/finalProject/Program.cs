@@ -12,114 +12,240 @@ namespace finalProject
         static void Main(string[] args)
         {
 
-            Node<int> node1 = new Node<int>(10);
-            Node<int> node3 = new Node<int>(30);
-            Node<int> node2 = new Node<int>(20, node3);
-            node1.SetNext(node2);
-            Node<int> node4 = new Node<int>(10);
-            node3.SetNext(node4);
-            Node<int> linkedList = node1;
-            Console.WriteLine(linkedList);
+
+            //Console.WriteLine("int  linked list  ");
+
+            //Node<int> node1 = new Node<int>(10);
+            //Node<int> node3 = new Node<int>(30);
+            //Node<int> node2 = new Node<int>(20, node3);
+            //node1.SetNext(node2);
+            //Node<int> node4 = new Node<int>(10);
+            //node3.SetNext(node4);
+            //Node<int> linkedList = node1;
+            //Console.WriteLine();
 
 
 
+            ////Q1
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine($"The list  Length is : {NumberOfNodes(linkedList)} ");
 
-            Console.WriteLine("=================================");
-            Console.WriteLine($"The list  Length is : {NumberOfNodes(linkedList)} ");
-
-            //Console.WriteLine("=================================");
-            //PrintLinkedList(linkedList);
-
-            Console.WriteLine("=================================");
-            Console.WriteLine("Enter a Number To Add To The First");
-            //int first = int.Parse(Console.ReadLine());
-            //linkedList = AddFirst(linkedList, first);
-            //PrintLinkedList(linkedList);
-
-            Console.WriteLine("=================================");
-            Console.WriteLine("Enter a Number To Add To The End ");
-            //int last = int.Parse(Console.ReadLine());
-            //AddLast(linkedList, last);
-            //PrintLinkedList(linkedList);
-
-            Console.WriteLine("=================================");
-            Console.WriteLine("Enter A Number To Add After the value ");
-            //int after = int.Parse(Console.ReadLine());
-            //AddAfter(linkedList, after);
-            //PrintLinkedList(linkedList);
-
-            Console.WriteLine("=================================");
-            Console.WriteLine("Deleting  The First index value of the List");
-            //linkedList = DeleteFirst(linkedList);
-            //PrintLinkedList(linkedList);
-
-            Console.WriteLine("=================================");
-            Console.WriteLine("Deleting The Last Index value of The List");
-            //DeleteLast(linkedList);
-            //PrintLinkedList(linkedList);
-
-            Console.WriteLine("=================================");
-            Console.WriteLine("Deleting Index value in the middle of the list");
-            //DeleteAfter(linkedList);
+            ////Q2
             //PrintLinkedList(linkedList);
 
 
-            Console.WriteLine("=================================");
-            Console.WriteLine("The First index value of the list");
-            //Console.WriteLine(FirstIndexOfList(linkedList));
+            ////Q3
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Enter a Number To Add To The First");
+            ////int first = int.Parse(Console.ReadLine());
+            ////linkedList = AddFirst(linkedList, first);
+            ////PrintLinkedList(linkedList);
+
+            ////Q4
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Enter a Number To Add To The End ");
+            ////int last = int.Parse(Console.ReadLine());
+            ////AddLast(linkedList, last);
+            ////PrintLinkedList(linkedList);
+
+
+            ////Q5
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Enter A Number To Add After the value ");
+            ////int after = int.Parse(Console.ReadLine());
+            ////AddAfter(linkedList, after);
+            ////PrintLinkedList(linkedList);
+
+            ////Q6
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Deleting  The First index value of the List");
+            ////linkedList = DeleteFirst(linkedList);
+            ////PrintLinkedList(linkedList);
+
+            ////Q7
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Deleting The Last Index value of The List");
+            ////DeleteLast(linkedList);
+            ////PrintLinkedList(linkedList);
+
+            ////Q8
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Deleting Index value in the middle of the list");
+            ////DeleteAfter(linkedList);
+            ////PrintLinkedList(linkedList);
+
+            ////Q9
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("The First index value of the list");
+            ////Console.WriteLine(FirstIndexOfList(linkedList));
+            ////PrintLinkedList(linkedList);
+
+
+            ////Q10
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("The Last Index value Of the List");
+            ////Console.WriteLine(LastIndex(linkedList));
+            ////PrintLinkedList(linkedList);
+
+            ////Q11
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("The Value Using the index that sended");
+            //Console.WriteLine("Enter the index below:");
+            //int index = int.Parse(Console.ReadLine());
+            //Console.WriteLine($"The Value is {FindValueUsingIndex(index, linkedList)}");
             //PrintLinkedList(linkedList);
 
+            ////Q12
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("checkin if the linked list contained the  value ");
+            ////Console.WriteLine("enter the value : ");
+            ////int value = int.Parse(Console.ReadLine());
+            ////if (IfContains(linkedList, value) == true)
+            ////{
+            ////    Console.WriteLine("the value Exists in the linked list ");
+            ////}
+            ////else Console.WriteLine("the value did not  Exists in the linked list");
+            ////PrintLinkedList(linkedList);
+
+            ////Q13
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Check If Circular Linked List");
+            ////Node<int> circularList = new Node<int>(1);
+            ////circularList.SetNext(new Node<int>(2, new Node<int>(3, circularList)));
+            ////Console.WriteLine(isCircular(circularList));
 
 
-            Console.WriteLine("=================================");
-            Console.WriteLine("The Last Index value Of the List");
-            //Console.WriteLine(LastIndex(linkedList));
+            ////Q14
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("linked list witheOut Duplicating ");
+            //Console.WriteLine(ReturnNewListNoDup(linkedList));
+
+            ////Q15
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Copying the list to new addres ");
+            //Console.WriteLine(copyTheListToDifferentLocation(linkedList));
+
+
+            ////Q16
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("print linked list from end to begining");
+            //PrintListFromEnd(linkedList);
+            //Console.WriteLine();
+
+            ////Q17
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Sorting the linked list From the smalest value to the bigest value ");
+
+
+            ////Q18
+            //Console.WriteLine("===============================================");
+            //copyTheListToDifferentLocation(linkedList);
+            //Console.WriteLine("cheeking if the linked lists is Equal in length and values ");
+            //Console.WriteLine($"the first linked list is :");
             //PrintLinkedList(linkedList);
+            //Console.WriteLine("the secound linked list is :");
+            //Console.WriteLine(copyTheListToDifferentLocation(linkedList));
 
-            Console.WriteLine("=================================");
-            Console.WriteLine("The Value Using the index that sended");
-            Console.WriteLine("Enter the index below:");
-            int index = int.Parse(Console.ReadLine());
-            Console.WriteLine($"The Value is {FindValueUsingIndex(index, linkedList)}");
-            PrintLinkedList(linkedList);
+            ////true
+            //Console.WriteLine(IsEqual(linkedList, copyTheListToDifferentLocation(linkedList)));
 
-            Console.WriteLine("=================================");
-            Console.WriteLine("checkin if the linked list contained the  value ");
-            //Console.WriteLine("enter the value : ");
-            //int value = int.Parse(Console.ReadLine());
-            //if (IfContains(linkedList, value) == true)
-            //{
-            //    Console.WriteLine("the value Exists in the linked list ");
-            //}
-            //else Console.WriteLine("the value did not  Exists in the linked list");
+            ////false
+            //Console.WriteLine(IsEqual(linkedList, copyTheListToDifferentLocation(AddFirst(linkedList, 5))));
+
+
+            ////Q19
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("merging tow lists");
+            //Console.WriteLine("first list:");
             //PrintLinkedList(linkedList);
-
-
-            Console.WriteLine("=================================");
-            Console.WriteLine("Check If Circular Linked List");
-            //Node<int> circularList = new Node<int>(1);
-            //circularList.SetNext(new Node<int>(2, new Node<int>(3, circularList)));
-            //Console.WriteLine(isCircular(circularList));
-
-            Console.WriteLine("=================================");
-            Console.WriteLine("linked list witheOut Duplicating ");
-            Console.WriteLine(ReturnNewListNoDup(linkedList));
-
-            Console.WriteLine("=================================");
-            Console.WriteLine("Copying the list to new addres ");
-            Console.WriteLine(copyTheListToDifferentLocation(linkedList));
+            //Console.WriteLine("secound list:");
+            //PrintLinkedList(linkedList);
+            ////Console.WriteLine(TwoListsMerge(linkedList, linkedList));
 
 
 
-            Console.WriteLine("=================================");
-            Console.WriteLine("print linked list from end to begining");
-            PrintListFromEnd(linkedList);
-            Console.WriteLine();
+            Console.WriteLine("worker linked list function test :");
+
+            Worker W2 = new Worker("Ahmad", "Abufani", 6000);
+            Worker W3 = new Worker("alex", "Due", 7000);
+            Worker W1 = new Worker("Omar", "Sobh", 5000);
+            Node<Worker> Workers = new Node<Worker>();
+
+            Workers = AddFirst(Workers, W1);
+            Workers = AddFirst(Workers, W2);
+            Workers = AddFirst(Workers, W3);
+            Workers = AddFirst(Workers, W1);
+
+            Console.WriteLine(Workers.ToString());
+
+            ////Q1
+            Console.WriteLine("===============================================");
+            Console.WriteLine($"The list  Length is : {NumberOfNodes(Workers)} ");
 
 
-            Console.WriteLine("=================================");
-            Console.WriteLine("Sorting the linked list From the smalest value to the bigest value ");
+            ////Q2
+            Console.WriteLine("===============================================");
+            PrintLinkedList(Workers);
 
+
+            ///Q3
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Adding worker to the first of the list :");
+            //Console.WriteLine("Enter First Name:");
+            //string fName = Console.ReadLine();
+            //Console.WriteLine("enter last Name:");
+            //string lName = Console.ReadLine();
+            //Console.WriteLine("Enter Salary:");
+            //double salarry = double.Parse(Console.ReadLine());
+            //Worker NewWorkerToAdd = new Worker(fName, lName, salarry);
+
+            //Workers = AddFirst(Workers, NewWorkerToAdd);
+            //PrintLinkedList(Workers);
+
+            //////Q4
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Adding worker to the Last of the list :");
+            //Console.WriteLine("Enter First Name:");
+            //fName = Console.ReadLine();
+            //Console.WriteLine("enter last Name:");
+            //lName = Console.ReadLine();
+            //Console.WriteLine("Enter Salary:");
+            //salarry = double.Parse(Console.ReadLine());
+            //Worker NewWorkerToAddToTheLast = new Worker(fName, lName, salarry);
+            //AddLast(Workers,NewWorkerToAddToTheLast);
+            //PrintLinkedList(Workers);
+
+
+            ///////Q5
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Adding worker after another worker value ");
+            //AddAfter(Workers, W1);
+            //PrintLinkedList(Workers);
+
+            ////Q6
+            //Console.WriteLine("===============================================");
+
+            //Console.WriteLine("Deleting  The First worker  of the List");
+            //Workers = DeleteFirst(Workers);
+            //PrintLinkedList(Workers);
+
+            ////Q7
+            //  Console.WriteLine("===============================================");
+            //Console.WriteLine("Deleting The Last worker of The List");
+            //DeleteLast(Workers);
+            //PrintLinkedList(Workers);
+
+            ////Q9
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("The First index value of the list");
+            //Console.WriteLine(FirstIndexOfList(Workers));
+
+
+            ////Q10
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("The Last Index value Of the List");
+            //Console.WriteLine(LastIndex(Workers));
+           
 
         }
 
@@ -139,7 +265,7 @@ namespace finalProject
         }
 
         //2.	הדפסת הרשימה.
-        public static void PrintLinkedList(Node<int> linkedList)
+        public static void PrintLinkedList<T>(Node<T> linkedList)
         {
             Console.WriteLine(linkedList);
         }
@@ -330,28 +456,63 @@ namespace finalProject
         // 17.	מיון הרשימה מהקטן לגדול. שים לב שאיברי הרשימה הם מסוג  Tועליך לחשוב איך להשוות בין שני אובייקטים.
         //רמז: תחקור איך המתודה Sort של המחלקה List של #C יודעת לעשות מיון לרשימה מכל סוג.
 
-        //public static Node<T>  SortLinkedList<T>(Node<T>linkedList)
+        //public static Node<T> SortLinkedList<T>(Node<T> linkedList)
         //{
-        //    Node<T> prevNode = new Node<T>( linkedList.GetValue());
-        //    Node<T> currNode = new Node<T>(linkedList.GetNext().GetValue());
-        //    while (currNode != null)
-        //    {
-        //        int res = prevNode.(currNode);
-        //        if (res == 1)
-        //        {
-        //            prevNode.Next = currNode.Next;
-        //            currNode.Next = head;
-        //            this.head = currNode;
-        //            currNode = prevNode;
-        //        }
-        //        else
-        //        {
-        //            prevNode = currNode;
-        //        }
-        //        currNode = currNode.Next;
-        //    }
-        //    return currNode;
+        //    return;
         //}
+
+
+        //18.	כתוב פונקציה חיצונית שתקבל שתי רשימות מקושרות ותחזיר אם שתי הרשימות הן אותו דבר מבחינת תוכן (אותו אורך ואותם ערכים).
+        static bool IsEqual<T>(Node<T> firstList, Node<T> secoundList)
+        {
+
+            if (NumberOfNodes(firstList) != NumberOfNodes(secoundList))
+            {
+                return false;
+            }
+            Node<T> First = new Node<T>(firstList.GetValue());
+            Node<T> Second = new Node<T>(secoundList.GetValue());
+
+            while (First != null && Second != null)
+            {
+                if (!First.GetValue().Equals(Second.GetValue()))
+                {
+                    return false;
+                }
+
+                First = First.GetNext();
+                Second = Second.GetNext();
+            }
+            return true;
+        }
+
+        //19.	כתוב פונקציה חיצונית שתקבל שתי רשימות מקושרות ותחזיר רשימה חדשה עם כל הערכים שנמצאים בשתי הרשימות
+        //(מיזוג מלא של שתי הרשימות לרשימה אחת ללא תלות באם הערך מופיע יותר מפעם אחת).
+
+        //static Node<T> TwoListsMerge<T>(Node<T> list1, Node<T> list2)
+        //{
+        //    Node<T> newList = new Node<T>();
+        //    Node<T> First = new Node<T>(list1);
+        //    Node<T> Second = new Node<T>(list2);
+        //    for (int i = 0; i < NumberOfNodes(list1); i++)
+        //    {
+        //        for (int j = 0; j < NumberOfNodes(list2); j++)
+        //        {
+        //            if (list1.GetValue().Equals(list2.GetValue()))
+        //            {
+        //                newList=AddFirst( newList, list1.GetValue());
+        //            }
+        //            list2 = list2.GetNext();
+        //        }
+        //        list1 = list1.GetNext();
+        //    }
+        //    return newList;
+        //}
+
+        //20.	כתוב פונקציה חיצונית שתקבל שתי רשימות מקושרות ותחזיר רשימה חדשה עם כל הערכים שנמצאים בשתי הרשימות כאשר כל ערך מופיע פעם אחת בלבד
+        //(איחוד בין שתי רשימות לרשימה אחת ללא כפילויות).
+
+
 
 
 

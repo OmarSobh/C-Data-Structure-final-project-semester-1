@@ -46,6 +46,13 @@ namespace finalProject
         {
             return workerSalary;
         }
-            
+        public override string ToString()
+        {
+            return $"First Name :{this.workerFirstName}\n" +
+                $"Last Name :{this.workerLastName }\n" +
+                $"Sallary : {this.workerSalary}\n" +
+                $"----------------\n";
+        }
+
     }
 }

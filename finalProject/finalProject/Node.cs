@@ -11,6 +11,10 @@ namespace finalProject
         private T value;
         private Node<T> next;
 
+        public Node()
+        {
+
+        }
         public Node(T value)
         {
             this.value = value;
@@ -63,6 +67,7 @@ namespace finalProject
 
             return this.value + "-->" + this.next;
         }
+
 
 
     }
