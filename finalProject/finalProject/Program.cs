@@ -12,18 +12,54 @@ namespace finalProject
         static void Main(string[] args)
         {
 
+            Node<int> node1 = new Node<int>(10);
+            Node<int> node3 = new Node<int>(30);
+            Node<int> node2 = new Node<int>(20, node3);
+            node1.SetNext(node2);
+            Node<int> node4 = new Node<int>(10);
+            node3.SetNext(node4);
+            Node<int> linkedList = node1;
+            Console.WriteLine();
+
+
+
+
+            Worker W2 = new Worker("Ahmad", "Abufani", 6000);
+            Worker W3 = new Worker("alex", "Due", 7000);
+            Worker W1 = new Worker("Omar", "Sobh", 5000);
+            Node<Worker> Workers = new Node<Worker>();
+            Workers = AddFirst(Workers, W1);
+            Workers = AddFirst(Workers, W2);
+            Workers = AddFirst(Workers, W3);
+            Workers = AddFirst(Workers, W1);
+
+
+            Course C1 = new Course(1, "C#", 90);
+            Course C2 = new Course(2, "Java", 87);
+            Course C3 = new Course(3, "React", 99);
+
+
+            Student S1 = new Student("Omar", "Sobh");
+            Student S2 = new Student("Ahmad", "AbuFani");
+            Student S3 = new Student("alex", "Due");
+            Node<Student> Students = new Node<Student>();
+
+            
+
+            S1.AddCourse(C1);
+            S1.AddCourse(C2);
+            S1.AddCourse(C2);
+            S3.AddCourse(C3);
+
+            Students = AddFirst(Students, S1);
+            Students = AddFirst(Students, S2);
+            Students = AddFirst(Students, S3);
+
+            Console.WriteLine(S1.GetStudentCourses());
+
+
 
             //Console.WriteLine("int  linked list  ");
-
-            //Node<int> node1 = new Node<int>(10);
-            //Node<int> node3 = new Node<int>(30);
-            //Node<int> node2 = new Node<int>(20, node3);
-            //node1.SetNext(node2);
-            //Node<int> node4 = new Node<int>(10);
-            //node3.SetNext(node4);
-            //Node<int> linkedList = node1;
-            //Console.WriteLine();
-
 
 
             ////Q1
@@ -59,14 +95,14 @@ namespace finalProject
             ////Q6
             //Console.WriteLine("===============================================");
             //Console.WriteLine("Deleting  The First index value of the List");
-            ////linkedList = DeleteFirst(linkedList);
-            ////PrintLinkedList(linkedList);
+            //linkedList = DeleteFirst(linkedList);
+            //PrintLinkedList(linkedList);
 
             ////Q7
             //Console.WriteLine("===============================================");
             //Console.WriteLine("Deleting The Last Index value of The List");
-            ////DeleteLast(linkedList);
-            ////PrintLinkedList(linkedList);
+            //DeleteLast(linkedList);
+            //PrintLinkedList(linkedList);
 
             ////Q8
             //Console.WriteLine("===============================================");
@@ -74,18 +110,18 @@ namespace finalProject
             ////DeleteAfter(linkedList);
             ////PrintLinkedList(linkedList);
 
-            ////Q9
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine("The First index value of the list");
-            ////Console.WriteLine(FirstIndexOfList(linkedList));
-            ////PrintLinkedList(linkedList);
+            //// Q9
+            // Console.WriteLine("===============================================");
+            // Console.WriteLine("The First index value of the list");
+            // Console.WriteLine(FirstIndexOfList(linkedList));
+            // PrintLinkedList(linkedList);
 
 
-            ////Q10
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine("The Last Index value Of the List");
-            ////Console.WriteLine(LastIndex(linkedList));
-            ////PrintLinkedList(linkedList);
+            //// Q10
+            // Console.WriteLine("===============================================");
+            // Console.WriteLine("The Last Index value Of the List");
+            // Console.WriteLine(LastIndex(linkedList));
+            // PrintLinkedList(linkedList);
 
             ////Q11
             //Console.WriteLine("===============================================");
@@ -164,31 +200,28 @@ namespace finalProject
 
 
 
-            Console.WriteLine("worker linked list function test :");
 
-            Worker W2 = new Worker("Ahmad", "Abufani", 6000);
-            Worker W3 = new Worker("alex", "Due", 7000);
-            Worker W1 = new Worker("Omar", "Sobh", 5000);
-            Node<Worker> Workers = new Node<Worker>();
 
-            Workers = AddFirst(Workers, W1);
-            Workers = AddFirst(Workers, W2);
-            Workers = AddFirst(Workers, W3);
-            Workers = AddFirst(Workers, W1);
 
-            Console.WriteLine(Workers.ToString());
+
+
+            ////Console.WriteLine("worker linked list function test :");
+
+
+
+            //Console.WriteLine(Workers.ToString());
 
             ////Q1
-            Console.WriteLine("===============================================");
-            Console.WriteLine($"The list  Length is : {NumberOfNodes(Workers)} ");
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine($"The list  Length is : {NumberOfNodes(Workers)} ");
 
 
             ////Q2
-            Console.WriteLine("===============================================");
-            PrintLinkedList(Workers);
+            //Console.WriteLine("===============================================");
+            //PrintLinkedList(Workers);
 
 
-            ///Q3
+            //////Q3
             //Console.WriteLine("===============================================");
             //Console.WriteLine("Adding worker to the first of the list :");
             //Console.WriteLine("Enter First Name:");
@@ -198,7 +231,6 @@ namespace finalProject
             //Console.WriteLine("Enter Salary:");
             //double salarry = double.Parse(Console.ReadLine());
             //Worker NewWorkerToAdd = new Worker(fName, lName, salarry);
-
             //Workers = AddFirst(Workers, NewWorkerToAdd);
             //PrintLinkedList(Workers);
 
@@ -241,11 +273,74 @@ namespace finalProject
             //Console.WriteLine(FirstIndexOfList(Workers));
 
 
-            ////Q10
+            //////Q10
             //Console.WriteLine("===============================================");
             //Console.WriteLine("The Last Index value Of the List");
             //Console.WriteLine(LastIndex(Workers));
-           
+
+
+            /////Q11
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("The worker Using the index that sended");
+            //Console.WriteLine("Enter the index below:");
+            //int index = int.Parse(Console.ReadLine());
+            //Console.WriteLine($"The Value is {FindValueUsingIndex(index, Workers)}");
+
+
+            ////Q12
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("checkin if the workers list contained the  the worker w3: ");
+
+            //if ((IfContains(Workers, W2) == true))
+            //{
+            //    Console.WriteLine("the worker Exists in the linked list ");
+            //}
+            //else Console.WriteLine("the worker did not  Exists in the linked list");
+
+
+            ////Q13
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Check If Circular Linked List");
+            //Node<Worker> worker = new Node<Worker>();
+            //worker.SetNext(new Node<Worker>(W2, new Node<Worker>(W1, worker)));
+            //Console.WriteLine(isCircular(worker));
+
+
+            ////Q14
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("linked workers list  withe Out Duplicating ");
+            //Console.WriteLine(ReturnNewListNoDup(Workers));
+
+            /////Q15
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Copying the worker list to new addres ");
+            //Console.WriteLine(copyTheListToDifferentLocation(Workers));
+
+
+            ////Q16
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("print workers linked list from end to begining");
+            //PrintListFromEnd(Workers);
+            //Console.WriteLine();
+
+
+            ////Q17
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Sorting the linked list From the smalest value to the bigest value ");
+
+
+            ////Q18
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("cheeking if the workers linked lists is Equal in length and values ");
+            //Console.WriteLine($"the first linked list is :");
+            //PrintLinkedList(Workers);
+            //Console.WriteLine("the secound linked list is :");
+            //Console.WriteLine(copyTheListToDifferentLocation(Workers));
+
+            ////true
+            //Console.WriteLine(IsEqual(Workers, copyTheListToDifferentLocation(Workers)));
+
+
 
         }
 
@@ -338,28 +433,38 @@ namespace finalProject
         }
 
         //10.	החזרת הערך בסוף הרשימה.
-        public static Node<T> LastIndex<T>(Node<T> linkedList)
+        public static T LastIndex<T>(Node<T> linkedList)
         {
             Node<T> current = linkedList;
             while (current.GetNext() != null)
             {
                 current = current.GetNext();
             }
-            return current;
+
+            return current.GetValue();
         }
 
         //11.	החזרת הערך לפי אינדקס שנשלח.
 
         public static T FindValueUsingIndex<T>(int index, Node<T> linkedList)
         {
-            int length = NumberOfNodes(linkedList);
-            if (index > length - 1 || index < 0)
-                return default(T);
+            Node<T> current = new Node<T>();
+            Node<T> nodelist = linkedList;
+            if (index > NumberOfNodes(linkedList))
+            {
+                Console.WriteLine("index not in the list");
+                return current.GetValue();
+            }
+            for (int i = 0; i < NumberOfNodes(linkedList); i++)
+            {
+                if (i == index)
+                {
 
-            Node<T> First = new Node<T>(linkedList.GetValue());
-            for (int i = length - 1; i > index; i--)
-                First = First.GetNext();
-            return First.GetValue();
+                    return nodelist.GetValue();
+                }
+                nodelist = nodelist.GetNext();
+            }
+            return current.GetValue();
         }
 
 
@@ -383,6 +488,7 @@ namespace finalProject
 
             return false;
         }
+
 
         //13.	בדיקה האם הרשימה שנשלחה היא רשימה מעגלית.
         //  רשימה מעגלית היא רשימה שבה האיבר האחרון מצביע לאיבר הראשון.
@@ -442,7 +548,7 @@ namespace finalProject
 
         //16.	הפיכת הרשימה מהסוף להתחלה ללא יצירת רשימה חדשה. אם הרשימה הייתה 123null היא תהפוך להיות 321null
 
-        public static void PrintListFromEnd(Node<int> list)
+        public static void PrintListFromEnd<T>(Node<T> list)
         {
             if (list == null)
             {

@@ -18,6 +18,11 @@ namespace finalProject
             this.studentLastName = studentLastName;
             this.courses = courses;
         }
+        public Student(string studentFirstName, string studentLastName)
+        {
+            this.studentFirstName = studentFirstName;
+            this.studentLastName = studentLastName; 
+        }
 
         public void SetStudentFirstName(string studentName)
         {
@@ -45,6 +50,20 @@ namespace finalProject
         {
             return this.courses;
         }
-
+        public void AddCourse(Course course)
+        {
+            
+            if (this.courses == null)
+            {
+                this.courses = new Node<Course>(course);
+            }
+            Node<Course> node = new Node<Course>(courses);
+            while (node.GetNext() != null)
+            {
+                node = node.GetNext();
+            }
+           
+            node.SetNext(new Node<Course>(course));
+        }
     }
 }
