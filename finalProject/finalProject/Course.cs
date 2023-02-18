@@ -38,7 +38,7 @@ namespace finalProject
         {
             return $" Course Code : {this.courseCode}\n" +
                 $"Course Name : {this.courseName}\n" +
-                $"Course Grade : {this.courseGrade}\n";
+                $"Course Grade : {this.courseGrade}\n \n";
         }
     }
 

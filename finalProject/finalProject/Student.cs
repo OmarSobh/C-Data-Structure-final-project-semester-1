@@ -23,6 +23,12 @@ namespace finalProject
             this.studentFirstName = studentFirstName;
             this.studentLastName = studentLastName; 
         }
+        public Student(Student other)
+        {
+            this.studentFirstName = other.studentFirstName;
+            this.studentLastName = other.studentLastName;
+            this.courses = other.courses;
+        }
 
         public void SetStudentFirstName(string studentName)
         {
@@ -50,6 +56,34 @@ namespace finalProject
         {
             return this.courses;
         }
+
+        public override string ToString()
+        {
+            return $"student first name : {this.studentFirstName}\n" +
+                $"Student last name : {this.studentLastName}\n" +
+                $"The Student Courses is :\n" +
+                $"{this.courses}"; 
+        }
+
+        public double GetAvg()
+        {
+
+            if (this.courses == null)
+            {
+                return 0;
+            }
+            double gradesum = 0;
+            double coursessum = 0;
+            Node<Course> temp = new Node<Course>(this.courses);
+            while (temp.GetValue() != null)
+            {
+                gradesum = ((double)temp.GetValue().getCourseGrade())+gradesum;
+                coursessum++;
+                temp = temp.GetNext();
+            }
+            return gradesum / coursessum;
+        }
+
         public void AddCourse(Course course)
         {
             

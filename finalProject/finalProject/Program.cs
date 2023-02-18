@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -11,7 +12,7 @@ namespace finalProject
     {
         static void Main(string[] args)
         {
-
+            //int Node 
             Node<int> node1 = new Node<int>(10);
             Node<int> node3 = new Node<int>(30);
             Node<int> node2 = new Node<int>(20, node3);
@@ -23,7 +24,7 @@ namespace finalProject
 
 
 
-
+            //Worker Node
             Worker W2 = new Worker("Ahmad", "Abufani", 6000);
             Worker W3 = new Worker("alex", "Due", 7000);
             Worker W1 = new Worker("Omar", "Sobh", 5000);
@@ -34,28 +35,78 @@ namespace finalProject
             Workers = AddFirst(Workers, W1);
 
 
+
+
+            //Courses objects 
             Course C1 = new Course(1, "C#", 90);
             Course C2 = new Course(2, "Java", 87);
             Course C3 = new Course(3, "React", 99);
+            Course C4 = new Course(4, "OOP", 78);
+            Course C5 = new Course(5, "ReactNative", 90);
+            Course C6 = new Course(6, "Nodejs", 88);
 
 
-            Student S1 = new Student("Omar", "Sobh");
-            Student S2 = new Student("Ahmad", "AbuFani");
-            Student S3 = new Student("alex", "Due");
-            Node<Student> Students = new Node<Student>();
 
+
+            // Courses linked list
+            Node<Course> listOfCourses = new Node<Course>();
+            listOfCourses = AddFirst(listOfCourses, C1);
+            listOfCourses = AddFirst(listOfCourses, C2);
+            listOfCourses = AddFirst(listOfCourses, C3);
+
+            Node<Course> listOfCourses2 = new Node<Course>();
+            listOfCourses2 = AddFirst(listOfCourses2, C4);
+            listOfCourses2 = AddFirst(listOfCourses2, C5);
+            listOfCourses2 = AddFirst(listOfCourses2, C6);
+
+            //Students objects
+            Student S1 = new Student("Omar", "Sobh", listOfCourses);
+            Student S2 = new Student("Ahmad", "AbuFani", listOfCourses2);
+            Student S3 = new Student("Adam", "jan", listOfCourses);
+            Student S4 = new Student("Kareem", "Jumaa", listOfCourses2);
+            Student S5 = new Student("Mahmod", "Hadi", listOfCourses);
+            Student S6 = new Student("Tayeb", "hajYehia", listOfCourses2);
+
+
+
+
+            //Students Linked list 
+            Node<Student> Students1 = new Node<Student>();
+            Students1 = AddFirst(Students1, S3);
+            Students1 = AddFirst(Students1  , S2);
+            Students1 = AddFirst(Students1, S1);
+
+            Node<Student> Students2 = new Node<Student>();
+            Students2 = AddFirst(Students2, S4);
+            Students2 = AddFirst(Students2, S5);
+            Students2 = AddFirst(Students2, S6);
+
+            //Console.WriteLine(Students1);
+            //Console.WriteLine(Students2);
+
+
+            //Classes  Array 
+        
+
+
+            Node<Student[]> Classes= new Node<Student[]>();
+
+            Student[] class1=new Student[] {S1,S2,S3};
+            Student[] class2 = new Student[] { S4, S5, S6 };
+            Student[] class3 = new Student[] { S1, S3, S4 };
             
 
-            S1.AddCourse(C1);
-            S1.AddCourse(C2);
-            S1.AddCourse(C2);
-            S3.AddCourse(C3);
+            Classes = AddFirst(Classes,class3);
+            Classes= AddFirst(Classes,class2);
+            Classes = AddFirst(Classes,class1);
 
-            Students = AddFirst(Students, S1);
-            Students = AddFirst(Students, S2);
-            Students = AddFirst(Students, S3);
 
-            Console.WriteLine(S1.GetStudentCourses());
+
+
+
+
+
+
 
 
 
@@ -203,7 +254,7 @@ namespace finalProject
 
 
 
-
+            //Q22
 
             ////Console.WriteLine("worker linked list function test :");
 
@@ -341,6 +392,24 @@ namespace finalProject
             //Console.WriteLine(IsEqual(Workers, copyTheListToDifferentLocation(Workers)));
 
 
+            //Students loinked list 
+
+            ////Q23 
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Printing Studunts Average : ");
+            //StudentsCoursesAverage(Students1);
+
+
+
+            /////Q24 
+            //Console.WriteLine("The Best Student Average is : ");
+            //Node<Student> Best = TheBestStudents(Classes);
+            //Console.WriteLine(Best);
+
+            /////Q25
+            //Console.WriteLine("the Worst Students is : ");
+            //Node<Student> Worst = WorsetStudents(Classes);
+            //Console.WriteLine(Worst);
 
         }
 
@@ -595,32 +664,105 @@ namespace finalProject
         //19.	כתוב פונקציה חיצונית שתקבל שתי רשימות מקושרות ותחזיר רשימה חדשה עם כל הערכים שנמצאים בשתי הרשימות
         //(מיזוג מלא של שתי הרשימות לרשימה אחת ללא תלות באם הערך מופיע יותר מפעם אחת).
 
-        //static Node<T> TwoListsMerge<T>(Node<T> list1, Node<T> list2)
-        //{
-        //    Node<T> newList = new Node<T>();
-        //    Node<T> First = new Node<T>(list1);
-        //    Node<T> Second = new Node<T>(list2);
-        //    for (int i = 0; i < NumberOfNodes(list1); i++)
-        //    {
-        //        for (int j = 0; j < NumberOfNodes(list2); j++)
-        //        {
-        //            if (list1.GetValue().Equals(list2.GetValue()))
-        //            {
-        //                newList=AddFirst( newList, list1.GetValue());
-        //            }
-        //            list2 = list2.GetNext();
-        //        }
-        //        list1 = list1.GetNext();
-        //    }
-        //    return newList;
-        //}
+        static Node<T> TwoListsMerge<T>(Node<T> list1, Node<T> list2)
+        {
+            Node<T> newList = new Node<T>();
+            Node<T> First = new Node<T>(list1);
+            Node<T> Second = new Node<T>(list2);
+            for (int i = 0; i < NumberOfNodes(list1); i++)
+            {
+                for (int j = 0; j < NumberOfNodes(list2); j++)
+                {
+                    if (list1.GetValue().Equals(list2.GetValue()))
+                    {
+                        newList = AddFirst(newList, list1.GetValue());
+                    }
+                    list2 = list2.GetNext();
+                }
+                list1 = list1.GetNext();
+            }
+            return newList;
+        }
 
         //20.	כתוב פונקציה חיצונית שתקבל שתי רשימות מקושרות ותחזיר רשימה חדשה עם כל הערכים שנמצאים בשתי הרשימות כאשר כל ערך מופיע פעם אחת בלבד
         //(איחוד בין שתי רשימות לרשימה אחת ללא כפילויות).
 
 
 
+        //23.	כתוב פונקציה חיצונית שתקבל רשימה מקושרת של סטודנטים Node<Student> ותדפיס את ממוצע הציונים של כל סטודנט ברשימה
+        //(תחשב את הממוצע לפי סכום הציונים חלקי מספר הקורסים). בנה רשימה מתאימה וקרא לה מתוך Main.
+
+        static void StudentsCoursesAverage(Node<Student> students)
+        {
+            Node<Student> currentStudent = new Node<Student>(students);
+            for (int i = 0; i < NumberOfNodes(students); i++)
+            {
+                if (currentStudent.GetValue() == null)
+                {
+                    return;
+                }
+                Console.WriteLine($"Student Name : {currentStudent.GetValue().GetStudentFirstName()} His Average is : {currentStudent.GetValue().GetAvg()}");
+                currentStudent = currentStudent.GetNext();
+            }
+        }
+
+        ///24.	כתוב פונקציה חיצונית שתקבל רשימה של מערכים מסוג  Node<Student[]> (רשימה שכל חוליה בתוכה מכילה מערך של סטודנטים).
+        ///  הרשימה מתארת מספר כיתות.לכל כיתה מערך של סטודנטים.
+        ///עליך להחזיר רשימה של הסטודנטים המצטיינים (ממוצע ציונים הכי גבוה). הנח שיש מצטיין אחד בכל כיתה.בנה רשימה מתאימה וקרא לה מתוך Main.
+
+
+        static Node<Student> TheBestStudents(Node<Student[]> classes)
+        {
+            Node<Student[]> ArrayOfStudents = new Node<Student[]>(classes.GetValue());
+            Node<Student> theBestStudents = new Node<Student>();
+
+            while (ArrayOfStudents != null)
+            {
+                int index = 0;
+                for (int i = 1; i < ArrayOfStudents.GetValue().Length; i++)
+                {
+                    if (ArrayOfStudents.GetValue()[i].GetAvg() > ArrayOfStudents.GetValue()[i - 1].GetAvg())
+                        index = i;
+                    else
+                        index = i - 1;
+                }
+                theBestStudents=AddFirst(theBestStudents, ArrayOfStudents.GetValue()[index]);
+                ArrayOfStudents = ArrayOfStudents.GetNext();
+            }
+            
+            return theBestStudents;
+
+            
+        }
+        static Node<Student> WorsetStudents(Node<Student[]> classes)//21
+        {
+            Node<Student[]> arrayOfStudents = new Node<Student[]>(classes.GetValue());
+            Node<Student> worstStudents = new Node<Student>();
+            while (arrayOfStudents != null)
+            {
+                int index = 0;
+                for (int i = 1; i < arrayOfStudents.GetValue().Length; i++)
+                {
+                    if (arrayOfStudents.GetValue()[i].GetAvg() < arrayOfStudents.GetValue()[i - 1].GetAvg())
+                        index = i;
+                    else
+                        index = i - 1;
+                }
+                worstStudents = AddFirst(worstStudents, arrayOfStudents.GetValue()[index]);
+              
+                arrayOfStudents = arrayOfStudents.GetNext();
+            }
+            return worstStudents;
+        }
+
+
 
 
     }
+
+
+
+
+
+
 }
