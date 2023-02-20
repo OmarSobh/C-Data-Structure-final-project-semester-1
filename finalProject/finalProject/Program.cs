@@ -145,10 +145,10 @@ namespace finalProject
             //PrintLinkedList(linkedList);
 
             ////Q6
-            Console.WriteLine("===============================================");
-            Console.WriteLine("Deleting  The First index value of the List");
-            linkedList = DeleteFirst(linkedList);
-            PrintLinkedList(linkedList);
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Deleting  The First index value of the List");
+            //linkedList = DeleteFirst(linkedList);
+            //PrintLinkedList(linkedList);
 
             ////Q7
             //Console.WriteLine("===============================================");
@@ -159,8 +159,8 @@ namespace finalProject
             ////Q8
             //Console.WriteLine("===============================================");
             //Console.WriteLine("Deleting Index value in the middle of the list");
-            ////DeleteAfter(linkedList);
-            ////PrintLinkedList(linkedList);
+            //DeleteAfter(linkedList);
+            //PrintLinkedList(linkedList);
 
             //// Q9
             // Console.WriteLine("===============================================");
@@ -195,11 +195,11 @@ namespace finalProject
             ////else Console.WriteLine("the value did not  Exists in the linked list");
             ////PrintLinkedList(linkedList);
 
-            ////Q13
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine("Check If Circular Linked List");
+            // // Q13
+            ////Console.WriteLine("===============================================");
+            ////Console.WriteLine("Check If Circular Linked List");
             ////Node<int> circularList = new Node<int>(1);
-            ////circularList.SetNext(new Node<int>(2, new Node<int>(3, circularList)));
+            ////circularList.SetNext(new Node<int>(2, new Node<int>(3, circularList))); //ההפניה היא circularList 
             ////Console.WriteLine(isCircular(circularList));
 
 
@@ -243,13 +243,13 @@ namespace finalProject
 
 
             ////Q19
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine("merging tow lists");
-            //Console.WriteLine("first list:");
-            //PrintLinkedList(linkedList);
-            //Console.WriteLine("secound list:");
-            //PrintLinkedList(linkedList);
-            ////Console.WriteLine(TwoListsMerge(linkedList, linkedList));
+            Console.WriteLine("===============================================");
+            Console.WriteLine("merging tow lists");
+            Console.WriteLine("first list:");
+            PrintLinkedList(linkedList);
+            Console.WriteLine("secound list:");
+            PrintLinkedList(linkedList);
+            Console.WriteLine(ListsMergeQ19(linkedList, linkedList));
 
 
 
@@ -491,8 +491,8 @@ namespace finalProject
             if (prev != null && prev.HasNext())
             {
                 Node<T> temp = prev.GetNext();
-                prev.SetNext(temp.GetNext());
-                temp.SetNext(null);
+                prev.SetNext(temp.GetNext()); ///skiping  the secound node
+                temp.SetNext(null);    //deleting node line(seting to null) 
             }
         }
         //9.	החזרת הערך בתחילת הרשימה.
@@ -623,7 +623,6 @@ namespace finalProject
             {
                 return;
             }
-
             PrintListFromEnd(list.GetNext());
             Console.Write(list.GetValue() + " ");
         }
@@ -632,9 +631,9 @@ namespace finalProject
         //רמז: תחקור איך המתודה Sort של המחלקה List של #C יודעת לעשות מיון לרשימה מכל סוג.
 
         
-        public static void SortLinkedList<T>(Node<T> head) where T : IComparable<T>
+        public static void SortLinkedList<T>(Node<T> linkedlistHead) where T : IComparable<T>
         {
-            Node<T> current = head;
+            Node<T> current = linkedlistHead;
             while (current != null)
             {
                 Node<T> min = current;
@@ -683,25 +682,51 @@ namespace finalProject
         //19.	כתוב פונקציה חיצונית שתקבל שתי רשימות מקושרות ותחזיר רשימה חדשה עם כל הערכים שנמצאים בשתי הרשימות
         //(מיזוג מלא של שתי הרשימות לרשימה אחת ללא תלות באם הערך מופיע יותר מפעם אחת).
 
-        static Node<T> TwoListsMerge<T>(Node<T> list1, Node<T> list2)
+        static Node<T> ListsMergeQ19<T>(Node<T> List1, Node<T> List2)
         {
-            Node<T> newList = new Node<T>();
-            Node<T> First = new Node<T>(list1);
-            Node<T> Second = new Node<T>(list2);
-            for (int i = 0; i < NumberOfNodes(list1); i++)
+
+            if (List1==null)
             {
-                for (int j = 0; j < NumberOfNodes(list2); j++)
-                {
-                    if (list1.GetValue().Equals(list2.GetValue()))
-                    {
-                        newList = AddFirst(newList, list1.GetValue());
-                    }
-                    list2 = list2.GetNext();
-                }
-                list1 = list1.GetNext();
+                return List2;
             }
-            return newList;
+            if (List2==null)
+            {
+                return List1;
+            }
+
+            Node<T> Merged = new Node<T>(List1);
+            Node<T> secoundList = new Node<T>(List2);
+
+            for (int i = 0; i < NumberOfNodes(secoundList); i++)
+            {
+                 AddLast(Merged, secoundList.GetValue());
+                secoundList = secoundList.GetNext();
+            }
+
+
+            return Merged;
         }
+
+
+
+        //static Node<T> TwoListsMerge<T>(Node<T> list1, Node<T> list2)
+        //{
+        //    Node<T> newList = new Node<T>();
+            
+        //    for (int i = 0; i < NumberOfNodes(list1); i++)
+        //    {
+        //        for (int j = 0; j < NumberOfNodes(list2); j++)
+        //        {
+        //            if (list1.GetValue().Equals(list2.GetValue()))
+        //            {
+        //                newList = AddFirst(newList, list1.GetValue());
+        //            }
+        //            list2 = list2.GetNext();
+        //        }
+        //        list1 = list1.GetNext();
+        //    }
+        //    return newList;
+        //}
 
         //20.	כתוב פונקציה חיצונית שתקבל שתי רשימות מקושרות ותחזיר רשימה חדשה עם כל הערכים שנמצאים בשתי הרשימות כאשר כל ערך מופיע פעם אחת בלבד
         //(איחוד בין שתי רשימות לרשימה אחת ללא כפילויות).
