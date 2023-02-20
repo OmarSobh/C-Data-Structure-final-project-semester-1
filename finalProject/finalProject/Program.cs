@@ -25,7 +25,7 @@ namespace finalProject
 
 
             //Worker Node
-            Worker W2 = new Worker("Ahmad", "Abufani", 6000);
+            Worker W2 = new Worker("Ahmad", "Abufani", 10000);
             Worker W3 = new Worker("alex", "Due", 7000);
             Worker W1 = new Worker("Omar", "Sobh", 5000);
             Node<Worker> Workers = new Node<Worker>();
@@ -34,7 +34,7 @@ namespace finalProject
             Workers = AddFirst(Workers, W3);
             Workers = AddFirst(Workers, W1);
 
-
+            
 
 
             //Courses objects 
@@ -54,6 +54,7 @@ namespace finalProject
             listOfCourses = AddFirst(listOfCourses, C1);
             listOfCourses = AddFirst(listOfCourses, C2);
             listOfCourses = AddFirst(listOfCourses, C3);
+
 
             Node<Course> listOfCourses2 = new Node<Course>();
             listOfCourses2 = AddFirst(listOfCourses2, C4);
@@ -243,13 +244,16 @@ namespace finalProject
 
 
             ////Q19
-            Console.WriteLine("===============================================");
-            Console.WriteLine("merging tow lists");
-            Console.WriteLine("first list:");
-            PrintLinkedList(linkedList);
-            Console.WriteLine("secound list:");
-            PrintLinkedList(linkedList);
-            Console.WriteLine(ListsMergeQ19(linkedList, linkedList));
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("merging tow lists");
+            //Console.WriteLine("first list:");
+            //PrintLinkedList(linkedList);
+            //Console.WriteLine("secound list:");
+            //PrintLinkedList(linkedList);
+            //Console.WriteLine(ListsMergeQ19(linkedList, linkedList));
+
+            //Q20 
+            //Console.WriteLine(TwoListsMerge(linkedList, linkedList));
 
 
 
@@ -264,7 +268,7 @@ namespace finalProject
 
             //Console.WriteLine(Workers.ToString());
 
-            ////Q1
+            // //Q1
             //Console.WriteLine("===============================================");
             //Console.WriteLine($"The list  Length is : {NumberOfNodes(Workers)} ");
 
@@ -274,31 +278,31 @@ namespace finalProject
             //PrintLinkedList(Workers);
 
 
-            //////Q3
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine("Adding worker to the first of the list :");
-            //Console.WriteLine("Enter First Name:");
-            //string fName = Console.ReadLine();
-            //Console.WriteLine("enter last Name:");
-            //string lName = Console.ReadLine();
-            //Console.WriteLine("Enter Salary:");
-            //double salarry = double.Parse(Console.ReadLine());
-            //Worker NewWorkerToAdd = new Worker(fName, lName, salarry);
-            //Workers = AddFirst(Workers, NewWorkerToAdd);
-            //PrintLinkedList(Workers);
+            ////////Q3
+            ////Console.WriteLine("===============================================");
+            ////Console.WriteLine("Adding worker to the first of the list :");
+            ////Console.WriteLine("Enter First Name:");
+            ////string fName = Console.ReadLine();
+            ////Console.WriteLine("enter last Name:");
+            ////string lName = Console.ReadLine();
+            ////Console.WriteLine("Enter Salary:");
+            ////double salarry = double.Parse(Console.ReadLine());
+            ////Worker NewWorkerToAdd = new Worker(fName, lName, salarry);
+            ////Workers = AddFirst(Workers, NewWorkerToAdd);
+            ////PrintLinkedList(Workers);
 
-            //////Q4
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine("Adding worker to the Last of the list :");
-            //Console.WriteLine("Enter First Name:");
-            //fName = Console.ReadLine();
-            //Console.WriteLine("enter last Name:");
-            //lName = Console.ReadLine();
-            //Console.WriteLine("Enter Salary:");
-            //salarry = double.Parse(Console.ReadLine());
-            //Worker NewWorkerToAddToTheLast = new Worker(fName, lName, salarry);
-            //AddLast(Workers,NewWorkerToAddToTheLast);
-            //PrintLinkedList(Workers);
+            ////////Q4
+            ////Console.WriteLine("===============================================");
+            ////Console.WriteLine("Adding worker to the Last of the list :");
+            ////Console.WriteLine("Enter First Name:");
+            ////fName = Console.ReadLine();
+            ////Console.WriteLine("enter last Name:");
+            ////lName = Console.ReadLine();
+            ////Console.WriteLine("Enter Salary:");
+            ////salarry = double.Parse(Console.ReadLine());
+            ////Worker NewWorkerToAddToTheLast = new Worker(fName, lName, salarry);
+            ////AddLast(Workers, NewWorkerToAddToTheLast);
+            ////PrintLinkedList(Workers);
 
 
             ///////Q5
@@ -342,7 +346,7 @@ namespace finalProject
 
             ////Q12
             //Console.WriteLine("===============================================");
-            //Console.WriteLine("checkin if the workers list contained the  the worker w3: ");
+            //Console.WriteLine("checkin if the workers list contained the  the worker w2: ");
 
             //if ((IfContains(Workers, W2) == true))
             //{
@@ -381,6 +385,7 @@ namespace finalProject
             //Console.WriteLine("===============================================");
             //Console.WriteLine("Sorting the linked list From the smalest value to the bigest value ");
 
+            //Console.WriteLine(SortLinkedList(Workers));
 
             ////Q18
             //Console.WriteLine("===============================================");
@@ -409,9 +414,9 @@ namespace finalProject
             //Console.WriteLine(Best);
 
             /////Q25
-            //Console.WriteLine("the Worst Students is : ");
-            //Node<Student> Worst = WorsetStudents(Classes);
-            //Console.WriteLine(Worst);
+            Console.WriteLine("the Worst Students is : ");
+            Node<Student> Worst = WorsetStudents(Classes);
+            Console.WriteLine(Worst);
 
         }
 
@@ -703,34 +708,39 @@ namespace finalProject
                 secoundList = secoundList.GetNext();
             }
 
-
             return Merged;
         }
 
 
 
-        //static Node<T> TwoListsMerge<T>(Node<T> list1, Node<T> list2)
-        //{
-        //    Node<T> newList = new Node<T>();
-            
-        //    for (int i = 0; i < NumberOfNodes(list1); i++)
-        //    {
-        //        for (int j = 0; j < NumberOfNodes(list2); j++)
-        //        {
-        //            if (list1.GetValue().Equals(list2.GetValue()))
-        //            {
-        //                newList = AddFirst(newList, list1.GetValue());
-        //            }
-        //            list2 = list2.GetNext();
-        //        }
-        //        list1 = list1.GetNext();
-        //    }
-        //    return newList;
-        //}
+
 
         //20.	כתוב פונקציה חיצונית שתקבל שתי רשימות מקושרות ותחזיר רשימה חדשה עם כל הערכים שנמצאים בשתי הרשימות כאשר כל ערך מופיע פעם אחת בלבד
         //(איחוד בין שתי רשימות לרשימה אחת ללא כפילויות).
+        static Node<T> TwoListsMerge<T>(Node<T> list1, Node<T> list2)
+        {
+            Node<T> newList = new Node<T>();
+            Node<T> first = new Node<T>(list1);
+            Node<T> secound = new Node<T>(list2);
 
+            for (int i = 0; i < NumberOfNodes(list1); i++)
+            {
+                
+                for (int j = 0; j < NumberOfNodes(list2); j++)
+                {
+                   
+                    if (first.GetValue().Equals(secound.GetValue()))
+                    {
+                        newList = AddFirst(newList, first.GetValue());
+                        secound = secound.GetNext();
+                        break;
+                    }
+                   
+                }
+                first = first.GetNext();
+            }
+            return newList;
+        }
 
 
         //23.	כתוב פונקציה חיצונית שתקבל רשימה מקושרת של סטודנטים Node<Student> ותדפיס את ממוצע הציונים של כל סטודנט ברשימה
