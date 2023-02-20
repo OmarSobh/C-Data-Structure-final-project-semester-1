@@ -84,20 +84,6 @@ namespace finalProject
             return gradesum / coursessum;
         }
 
-        public void AddCourse(Course course)
-        {
-            
-            if (this.courses == null)
-            {
-                this.courses = new Node<Course>(course);
-            }
-            Node<Course> node = new Node<Course>(courses);
-            while (node.GetNext() != null)
-            {
-                node = node.GetNext();
-            }
-           
-            node.SetNext(new Node<Course>(course));
-        }
+       
     }
 }

@@ -49,6 +49,7 @@ namespace finalProject
 
 
             // Courses linked list
+
             Node<Course> listOfCourses = new Node<Course>();
             listOfCourses = AddFirst(listOfCourses, C1);
             listOfCourses = AddFirst(listOfCourses, C2);
@@ -73,7 +74,7 @@ namespace finalProject
             //Students Linked list 
             Node<Student> Students1 = new Node<Student>();
             Students1 = AddFirst(Students1, S3);
-            Students1 = AddFirst(Students1  , S2);
+            Students1 = AddFirst(Students1, S2);
             Students1 = AddFirst(Students1, S1);
 
             Node<Student> Students2 = new Node<Student>();
@@ -85,20 +86,20 @@ namespace finalProject
             //Console.WriteLine(Students2);
 
 
+
+
             //Classes  Array 
-        
 
+            Node<Student[]> Classes = new Node<Student[]>();
 
-            Node<Student[]> Classes= new Node<Student[]>();
-
-            Student[] class1=new Student[] {S1,S2,S3};
+            Student[] class1 = new Student[] { S1, S2, S3 };
             Student[] class2 = new Student[] { S4, S5, S6 };
             Student[] class3 = new Student[] { S1, S3, S4 };
-            
 
-            Classes = AddFirst(Classes,class3);
-            Classes= AddFirst(Classes,class2);
-            Classes = AddFirst(Classes,class1);
+
+            Classes = AddFirst(Classes, class3);
+            Classes = AddFirst(Classes, class2);
+            Classes = AddFirst(Classes, class1);
 
 
 
@@ -114,26 +115,26 @@ namespace finalProject
 
 
             ////Q1
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine($"The list  Length is : {NumberOfNodes(linkedList)} ");
+            Console.WriteLine("===============================================");
+            Console.WriteLine($"The list  Length is : {NumberOfNodes(linkedList)} ");
 
             ////Q2
             //PrintLinkedList(linkedList);
 
 
             ////Q3
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine("Enter a Number To Add To The First");
-            ////int first = int.Parse(Console.ReadLine());
-            ////linkedList = AddFirst(linkedList, first);
-            ////PrintLinkedList(linkedList);
+            Console.WriteLine("===============================================");
+            Console.WriteLine("Enter a Number To Add To The First");
+            int first = int.Parse(Console.ReadLine());
+            linkedList = AddFirst(linkedList, first);
+            PrintLinkedList(linkedList);
 
             ////Q4
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine("Enter a Number To Add To The End ");
-            ////int last = int.Parse(Console.ReadLine());
-            ////AddLast(linkedList, last);
-            ////PrintLinkedList(linkedList);
+            Console.WriteLine("===============================================");
+            Console.WriteLine("Enter a Number To Add To The End ");
+            int last = int.Parse(Console.ReadLine());
+            AddLast(linkedList, last);
+            PrintLinkedList(linkedList);
 
 
             ////Q5
@@ -219,10 +220,11 @@ namespace finalProject
             //PrintListFromEnd(linkedList);
             //Console.WriteLine();
 
-            ////Q17
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine("Sorting the linked list From the smalest value to the bigest value ");
-
+            //Q17
+            Console.WriteLine("===============================================");
+            Console.WriteLine("Sorting the linked list From the smalest value to the bigest value ");
+            SortLinkedList(linkedList);
+            PrintListFromEnd(linkedList);
 
             ////Q18
             //Console.WriteLine("===============================================");
@@ -631,11 +633,30 @@ namespace finalProject
         // 17.	מיון הרשימה מהקטן לגדול. שים לב שאיברי הרשימה הם מסוג  Tועליך לחשוב איך להשוות בין שני אובייקטים.
         //רמז: תחקור איך המתודה Sort של המחלקה List של #C יודעת לעשות מיון לרשימה מכל סוג.
 
-        //public static Node<T> SortLinkedList<T>(Node<T> linkedList)
-        //{
-        //    return;
-        //}
+        
+        public static void SortLinkedList<T>(Node<T> head) where T : IComparable<T>
+        {
+            Node<T> current = head;
+            while (current != null)
+            {
+                Node<T> min = current;
+                Node<T> next = current.GetNext();
+                while (next != null)
+                {
+                    if (next.GetValue().CompareTo(min.GetValue()) < 0)
+                    {
+                        min = next;
+                    }
+                    next = next.GetNext();
+                }
+                T nextValue = current.GetValue();
+                current.SetValue(min.GetValue());
+                min.SetValue(nextValue);
+                current = current.GetNext();
+                
+            }
 
+        }
 
         //18.	כתוב פונקציה חיצונית שתקבל שתי רשימות מקושרות ותחזיר אם שתי הרשימות הן אותו דבר מבחינת תוכן (אותו אורך ואותם ערכים).
         static bool IsEqual<T>(Node<T> firstList, Node<T> secoundList)
@@ -726,15 +747,22 @@ namespace finalProject
                     else
                         index = i - 1;
                 }
-                theBestStudents=AddFirst(theBestStudents, ArrayOfStudents.GetValue()[index]);
+                theBestStudents = AddFirst(theBestStudents, ArrayOfStudents.GetValue()[index]);
                 ArrayOfStudents = ArrayOfStudents.GetNext();
             }
-            
+
             return theBestStudents;
 
-            
+
         }
-        static Node<Student> WorsetStudents(Node<Student[]> classes)//21
+
+        ////25.
+        //// כתוב פונקציה חיצונית שתקבל מערך של רשימות מסוג
+        //Node<Student>[] (מערך שכל תא בתוכו הוא רשימה של סטודנטים).
+        // המערך מתאר מספר כיתות.לכל כיתה רשימה של סטודנטים.
+        //עליך להחזיר מערך של הסטודנטים עם הכי הרבה נכשלים בקורסים (הנח שיש לכל היותר אחד כזה בכל כיתה). בנה רשימה מתאימה וקרא לה מתוך Main.
+
+        static Node<Student> WorsetStudents(Node<Student[]> classes)//25
         {
             Node<Student[]> arrayOfStudents = new Node<Student[]>(classes.GetValue());
             Node<Student> worstStudents = new Node<Student>();
@@ -749,7 +777,7 @@ namespace finalProject
                         index = i - 1;
                 }
                 worstStudents = AddFirst(worstStudents, arrayOfStudents.GetValue()[index]);
-              
+
                 arrayOfStudents = arrayOfStudents.GetNext();
             }
             return worstStudents;
