@@ -19,9 +19,9 @@ namespace finalProject
             node1.SetNext(node2);
             Node<int> node4 = new Node<int>(10);
             node3.SetNext(node4);
-            Node<int> linkedList = node1;
+            Node<int> linkedList = new Node<int> (node1);
             Console.WriteLine();
-
+            Console.WriteLine(linkedList);
 
 
             //Worker Node
@@ -111,44 +111,44 @@ namespace finalProject
 
 
 
-            //Console.WriteLine("int  linked list  ");
+            //int  linked list 
 
 
             ////Q1
-            Console.WriteLine("===============================================");
-            Console.WriteLine($"The list  Length is : {NumberOfNodes(linkedList)} ");
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine($"The list  Length is : {NumberOfNodes(linkedList)} ");
 
             ////Q2
             //PrintLinkedList(linkedList);
 
 
             ////Q3
-            Console.WriteLine("===============================================");
-            Console.WriteLine("Enter a Number To Add To The First");
-            int first = int.Parse(Console.ReadLine());
-            linkedList = AddFirst(linkedList, first);
-            PrintLinkedList(linkedList);
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Enter a Number To Add To The First");
+            //int first = int.Parse(Console.ReadLine());
+            //linkedList = AddFirst(linkedList, first);
+            //PrintLinkedList(linkedList);
 
             ////Q4
-            Console.WriteLine("===============================================");
-            Console.WriteLine("Enter a Number To Add To The End ");
-            int last = int.Parse(Console.ReadLine());
-            AddLast(linkedList, last);
-            PrintLinkedList(linkedList);
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Enter a Number To Add To The End ");
+            //int last = int.Parse(Console.ReadLine());
+            //AddLast(linkedList, last);
+            //PrintLinkedList(linkedList);
 
 
             ////Q5
             //Console.WriteLine("===============================================");
             //Console.WriteLine("Enter A Number To Add After the value ");
-            ////int after = int.Parse(Console.ReadLine());
-            ////AddAfter(linkedList, after);
-            ////PrintLinkedList(linkedList);
+            //int after = int.Parse(Console.ReadLine());
+            //AddAfter(linkedList, after);
+            //PrintLinkedList(linkedList);
 
             ////Q6
-            //Console.WriteLine("===============================================");
-            //Console.WriteLine("Deleting  The First index value of the List");
-            //linkedList = DeleteFirst(linkedList);
-            //PrintLinkedList(linkedList);
+            Console.WriteLine("===============================================");
+            Console.WriteLine("Deleting  The First index value of the List");
+            linkedList = DeleteFirst(linkedList);
+            PrintLinkedList(linkedList);
 
             ////Q7
             //Console.WriteLine("===============================================");
@@ -221,10 +221,10 @@ namespace finalProject
             //Console.WriteLine();
 
             //Q17
-            Console.WriteLine("===============================================");
-            Console.WriteLine("Sorting the linked list From the smalest value to the bigest value ");
-            SortLinkedList(linkedList);
-            PrintListFromEnd(linkedList);
+            //Console.WriteLine("===============================================");
+            //Console.WriteLine("Sorting the linked list From the smalest value to the bigest value ");
+            //SortLinkedList(linkedList);
+            //PrintListFromEnd(linkedList);
 
             ////Q18
             //Console.WriteLine("===============================================");
@@ -446,16 +446,16 @@ namespace finalProject
         }
 
         //4.	הוספת ערך בסוף הרשימה.
-        public static void AddLast<T>(Node<T> head, T value)
+        public static void AddLast<T>(Node<T> linkedList, T value)
         {
             Node<T> newNode = new Node<T>(value);
 
-            while (head.HasNext())
+            while (linkedList.HasNext())
             {
-                head = head.GetNext();
+                linkedList = linkedList.GetNext();
             }
 
-            head.SetNext(newNode);
+            linkedList.SetNext(newNode);
         }
 
         //5.	הוספת ערך באמצע הרשימה AddAfter.
@@ -469,10 +469,8 @@ namespace finalProject
         public static Node<T> DeleteFirst<T>(Node<T> list)
         {
             Node<T> temp = list;
-            list = list.GetNext();
-            temp.SetNext(null);
-            return list;
-            //list is sent by value so we need to return it or to get it by reference
+            return list.GetNext();
+            
         }
 
         //7.	מחיקת ערך בסוף הרשימה.

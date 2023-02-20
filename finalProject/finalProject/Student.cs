@@ -73,15 +73,15 @@ namespace finalProject
                 return 0;
             }
             double gradesum = 0;
-            double coursessum = 0;
+            double counter = 0;
             Node<Course> temp = new Node<Course>(this.courses);
             while (temp.GetValue() != null)
             {
-                gradesum = ((double)temp.GetValue().getCourseGrade())+gradesum;
-                coursessum++;
+                gradesum += ((double)temp.GetValue().getCourseGrade());//////
+                counter++;
                 temp = temp.GetNext();
             }
-            return gradesum / coursessum;
+            return gradesum / counter;
         }
 
        
