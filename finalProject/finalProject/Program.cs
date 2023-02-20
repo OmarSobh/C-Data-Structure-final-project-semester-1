@@ -699,7 +699,7 @@ namespace finalProject
 
             for (int i = 0; i < NumberOfNodes(secoundList); i++)
             {
-                 AddLast(Merged, secoundList.GetValue());
+                AddLast(Merged, secoundList.GetValue());
                 secoundList = secoundList.GetNext();
             }
 
